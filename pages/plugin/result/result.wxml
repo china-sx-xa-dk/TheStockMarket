@@ -1,0 +1,53 @@
+<!--pages/plugin/result/result.wxml-->
+<!-- <text>第一支股票相关性</text>
+<text>第二支股票相关性</text>
+<text>imgurl为:</text> -->
+
+<!--wxml-->
+<!-- <view>
+  自动补全在这里:<input id='searchInput'  type="text" bindinput="bindKeyInput" value="{{inputValue}}" data-statu="open" />
+</view> -->
+<!--mask-->
+<!-- <view class="input_screen" bindtap="bindKeyInput" data-statu="open" wx:if="{{showInputStatus}}"></view>  -->
+<!-- auto-completion  -->
+<!-- <view class="scrollview" wx:if="{{showInputStatus}}">
+  <view  wx:for="{{bindSource}}">
+    <view id="{{item}}"  class="itemview" bindtap="itemtap" data-statu="close" wx:if="{{showInputStatus}}">
+              {{item}}   
+    </view>
+  </view>
+</view> -->
+<cu-custom bgColor="bg-gradual-pink" isCustom="{{true}}"><view slot="content">选择股票</view></cu-custom>
+<view class="box">
+  <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search"></input>
+    </view>
+  </view>
+</view>
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text> 列表左滑
+    </view>
+  </view>
+  <view class="cu-list menu-avatar">
+    <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{20}}" wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
+      <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100{{index+1}}.jpg);"></view>
+      <view class="content">
+        <view class="text-grey">文晓港</view>
+        <view class="text-gray text-sm">
+          <text class="cuIcon-infofill text-red"></text> 消息未送达</view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">22:20</view>
+        <view class="cu-tag round bg-grey sm">5</view>
+      </view>
+      <view class="move">
+        <view class="bg-grey">置顶</view>
+        <view class="bg-red">删除</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

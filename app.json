@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/plugin/choose/choose",
+    "pages/index/index",
+    "pages/plugin/home/home",
+    "pages/plugin/result/result"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationStyle": "custom",
+    "navigationBarTitleText": "股市AI计算器",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}

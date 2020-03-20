@@ -1,0 +1,40 @@
+<cu-custom bgColor="bg-gradual-pink" isCustom="{{true}}"><view slot="content">选择股票</view></cu-custom>
+<view class="box">
+  <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" id='searchInput' bindinput="bindKeyInput" value="{{inputValue}}" data-statu="open" placeholder="输入股票代码 地址 名称" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-green shadow-blur round opt_btn" bindtap="chooseStock" size='mini'>确认选择</button>
+    </view>
+  </view>
+</view>
+<!--mask-->
+<view class="input_screen" bindtap="bindKeyInput" data-statu="open" wx:if="{{showInputStatus}}"></view>
+<!-- auto-completion  -->
+<view class="cu-list menu-avatar scrollview" wx:if="{{showInputStatus}}">
+  <view class="cu-item" wx:for="{{bindSource}}" bindtap="itemtap" data-content="{{item}}" data-statu="close">
+    <view class="content" wx:if="{{showInputStatus}}"> 
+      <view class="text-grey">{{item}}</view>
+    </view>
+  </view>
+</view>
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>历史记录
+  </view>
+  <view class="margin-left-sm" bindtap="clickDeleteHistory">
+    <text class="cuIcon-delete lg text-gray" style="margin-right: 40rpx;font-size: 35rpx;"></text>
+  </view>
+</view>
+  <view class="padding solid-bottom flex flex-wrap">
+    <view class="cu-capsule round padding-xs" wx:for="{{history}}">
+      <view class="cu-tag bg-grey " bindtap="historyClose" data-content="{{item}}">
+        <text class="cuIcon-close"></text>
+      </view>
+      <view class="cu-tag line-gret" bindtap="historyChoose" data-content="{{item}}">
+        {{item}}
+      </view>
+    </view>
+  </view>

@@ -1,0 +1,8 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">关于</view></cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于股市AI计算器</view>
+  <view class='text-content'>
+    <view>Hi！欢迎使用股市AI计算器</view>
+    <view class='margin-top-sm'>股市AI计算器是陕西高格信息技术有限公司为广大股民推出的股市利器，更多功能敬请期。</view>
+  </view>
+</view>

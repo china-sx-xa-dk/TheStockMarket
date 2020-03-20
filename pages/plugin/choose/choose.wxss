@@ -1,0 +1,21 @@
+/* pages/plugin/choose/choose.wxss */
+.cu-list.menu-avatar .cu-item{
+  height: 90rpx;
+}
+
+.cu-list.menu-avatar .cu-item .content{
+  left: 50rpx;
+}
+
+.cu-list.menu-avatar>.cu-item .content>view:first-child{
+  font-size: 35rpx;
+}
+
+.opt_btn {
+  height: 60rpx;
+  width: 120rpx;
+  padding: 0 15px;
+  line-height: 60rpx !important;
+  font-size: 10pt !important;
+  margin-left: 20rpx;
+}
