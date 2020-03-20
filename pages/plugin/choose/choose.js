@@ -273,11 +273,10 @@ Page({  // 页面的初始数据  data: {
         history: _history
       })
       wx.setStorageSync('choose_stock_history', _history)
-      //正常匹配进行封装参数返回跳转
+      //正常匹配 跳转回填写股票界面
+      wx.redirectTo({
+        url: '../form/form?returnResult=' + _input_value + '&returnIndex=' + self.returnIndex
+      });
     }
-    //跳转回填写股票界面
-    wx.redirectTo({
-      url: '../form/form?returnResult=' + _input_value + '&returnIndex=' + self.returnIndex
-    });
   }
 })
