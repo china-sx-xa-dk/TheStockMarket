@@ -12,11 +12,11 @@
   </view>
 	<view class="cu-form-group">
 		<view class="title">股票代码</view>
-		<input placeholder="输入股票代码" value="{{firCode}}" bindinput="FirCodeChange"></input>
+		<input placeholder="输入股票代码" value="{{firCode}}" data-index='0' bindtap="StockCodeClick" disabled="disabled"></input>
 	</view>
   <view class="cu-form-group">
 		<view class="title">股票代码</view>
-		<input placeholder="输入股票代码" value="{{secCode}}" bindinput="SecCodeChange"></input>
+		<input placeholder="输入股票代码" value="{{secCode}}" data-index='1' bindtap="StockCodeClick" disabled="disabled"></input>
 	</view>
 
   <!--wxml-->

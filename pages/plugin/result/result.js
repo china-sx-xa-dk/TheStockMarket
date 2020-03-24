@@ -2,28 +2,7 @@ const app = getApp();
 Page({  // 页面的初始数据  data: {
   showInputStatus: false,
   inputValue: '',//点击结果项之后替换到文本框的值
-  adapterSource: [
-    "000001 深圳 平安银行",
-    "000002 深圳 万科A",
-    "000004 深圳 国农科技",
-    "000005 深圳 世纪星源",
-    "000006 深圳 深振业A",
-    "000007 深圳 全新好",
-    "000008 北京 神州高铁",
-    "000009 深圳 中国宝安",
-    "000010 深圳 *ST美丽",
-    "000011 深圳 深物业A",
-    "000012 深圳 南玻A",
-    "000014 深圳 沙河股份",
-    "000016 深圳 深康佳A",
-    "000017 深圳 深中华A",
-    "000019 深圳 深粮控股",
-    "000020 深圳 深华发A",
-    "000021 深圳 深科技",
-    "000023 深圳 深天地A",
-    "000025 深圳 特力A",
-    "000026 深圳 飞亚达",
-    "000027 深圳 深圳能源"],//本地匹配源
+  // adapterSource: wx.setStorageSync(app.globalData.StockList),//本地匹配源
   bindSource: [],//绑定到页面的数据，根据用户输入动态变化  },
   bindKeyInput: function (e) {
     var currentInputStatu = e.currentTarget.dataset.statu; var prefix = e.detail.value//用户实时输入值

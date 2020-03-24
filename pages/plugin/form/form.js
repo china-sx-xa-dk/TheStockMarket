@@ -5,17 +5,31 @@ Page({
     CustomBar: app.globalData.CustomBar,
     index: 0,
     picker: ['一个月', '三个月', '一年', '三年'],
-    firCode: '123456',
-    secCode: '654321'
+    firCode: '',
+    secCode: ''
   },
-  FirCodeChange(e){
-    this.setData({
-      firCode: e.detail.value
-    })
-  },
-  SecCodeChange(e) {
-    this.setData({
-      secCode: e.detail.value
+  StockCodeClick(e){
+    let index = e.currentTarget.dataset.index
+    const self = this
+    //跳转子页面
+    wx.navigateTo({
+      url: '../choose/choose?index='+index,
+      events: {
+        // 子页面修改父页面的内容
+        changeStockCode: function (data) {
+          let _index = data.index
+          let _data = data.data
+          if (_index == '0'){
+            self.setData({
+              firCode: _data
+            })
+          }else{
+            self.setData({
+              secCode: _data
+            })
+          }
+        }
+      }
     })
   },
   StartDateChange(e) {
@@ -29,7 +43,6 @@ Page({
     })
   },
   PickerChange(e) {
-    console.log(e);
     this.setData({
       index: e.detail.value
     })
@@ -38,10 +51,6 @@ Page({
     let index = event.currentTarget.dataset.index;
     let firCode = event.currentTarget.dataset.firCode;
     let secCode = event.currentTarget.dataset.secCode;
-
-    console.log(index);
-
-    console.log(this.getPreMonth(this.getToDay()));
 
     if (firCode === "" || secCode === "" ){
       wx.showToast({

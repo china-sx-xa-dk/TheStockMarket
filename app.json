@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/plugin/choose/choose",
     "pages/index/index",
+    "pages/plugin/form/form",
     "pages/plugin/home/home",
-    "pages/plugin/result/result"
+    "pages/plugin/result/result",
+    "pages/plugin/choose/choose"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
