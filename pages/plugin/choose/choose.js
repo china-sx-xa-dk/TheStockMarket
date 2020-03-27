@@ -2,7 +2,7 @@ const app = getApp();
 Page({  // 页面的初始数据  data: {
   showInputStatus: false,
   inputValue: '',//点击结果项之后替换到文本框的值
-  history: [],
+  history: new Array(),
   returnIndex: 0,//返回给哪个选择框的标示
   adapterSource: wx.getStorageSync(app.globalData.StockList),//本地匹配源
   bindSource: [],//绑定到页面的数据，根据用户输入动态变化  },
@@ -90,7 +90,6 @@ Page({  // 页面的初始数据  data: {
     //效验是否有效传值
     let self = this
     let _input_value = itemtap ? e.currentTarget.dataset.content.substring(0, 6) : self.data.inputValue
-    console.log(_input_value)
     let _data = self.adapterSource
     let _flag = 0
     for (let i = 0; i < _data.length; i++) {
@@ -109,6 +108,9 @@ Page({  // 页面的初始数据  data: {
     } else {
       //保存搜索记录到本地缓存中
       let _history = self.data.history
+      if (typeof (_history) == "undefined"){
+        _history = []
+      }
       _history.push(_input_value)
       _history = Array.from(new Set(_history))
       this.setData({

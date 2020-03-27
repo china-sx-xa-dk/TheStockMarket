@@ -10,7 +10,7 @@
         </view>
     </view>
   </view>
-	<view class="cu-form-group">
+  <view class="cu-form-group margin-top">
 		<view class="title">股票代码</view>
 		<input placeholder="输入股票代码" value="{{firCode}}" data-index='0' bindtap="StockCodeClick" disabled="disabled"></input>
 	</view>
@@ -18,22 +18,6 @@
 		<view class="title">股票代码</view>
 		<input placeholder="输入股票代码" value="{{secCode}}" data-index='1' bindtap="StockCodeClick" disabled="disabled"></input>
 	</view>
-
-  <!--wxml-->
-  <view>
-  <input id='searchInput'  type="text" bindinput="bindKeyInput" value="{{inputValue}}" data-statu="open" />
-  </view>
-  <!--mask-->
-  <view class="input_screen" bindtap="bindKeyInput" data-statu="close" wx:if="{{showInputStatus}}"></view> 
-  <!-- auto-completion  -->
-  <view class="scrollview" wx:if="{{showInputStatus}}">
-          <view  wx:for="{{bindSource}}">
-                  <view id="{{item}}"  class="itemview" bindtap="itemtap" data-statu="close" wx:if="{{showInputStatus}}">
-                            {{item}}   
-                  </view>
-          </view>
-  </view>
-  
 
 	<view class="cu-form-group margin-top">
 		<view class="title">选择时间段</view>

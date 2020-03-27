@@ -52,6 +52,7 @@ App({
     StockInitTime: 'stock_init_time', //缓存-股票更新时间
     ChooseStockHistory: 'choose_stock_history', //缓存-选择股票代码页面选择历史缓存
     StockList: 'stock_list',  //缓存-股票列表
+    CaluateResult: 'caluate_result',
     ColorList: [{
       title: '嫣红',
       name: 'red',
