@@ -4,7 +4,7 @@ Page({  // 页面的初始数据  data: {
   inputValue: '',//点击结果项之后替换到文本框的值
   history: new Array(),
   returnIndex: 0,//返回给哪个选择框的标示
-  adapterSource: wx.getStorageSync(app.globalData.StockList),//本地匹配源
+  // adapterSource: wx.getStorageSync(app.globalData.StockList),//本地匹配源
   bindSource: [],//绑定到页面的数据，根据用户输入动态变化  },
   onLoad: function (options){
     let self = this;
@@ -28,8 +28,6 @@ Page({  // 页面的初始数据  data: {
   },
   bindKeyInput: function (e) {
     const self = this
-    let _stock_list = self.adapterSource
-
     var currentInputStatu = e.currentTarget.dataset.statu
     var prefix = e.detail.value//用户实时输入值
     var newSource = []//匹配的结果
@@ -43,6 +41,7 @@ Page({  // 页面的初始数据  data: {
           showBtnStatus2: true
         }
       );
+      let _stock_list = wx.getStorageSync(app.globalData.StockList)
       _stock_list.forEach(function (e) {
         if (e.indexOf(prefix) != -1) {//返回某个指定的字符串值在字符串中首次出现的位置,如果要检索的字符串值没有出现，则该方法返回 -1
           newSource.push(e)
@@ -87,12 +86,12 @@ Page({  // 页面的初始数据  data: {
       );
     }
   },
-  //选择 点击动态列表 点击历史记录后完成历史记录缓存并跳转携带参数
+  // //选择 点击动态列表 点击历史记录后完成历史记录缓存并跳转携带参数
   chooseStock: function (e, itemtap) {
     //效验是否有效传值
     let self = this
     let _input_value = itemtap ? e.currentTarget.dataset.content.substring(0, 6) : self.data.inputValue
-    let _data = self.adapterSource
+    let _data = wx.getStorageSync(app.globalData.StockList)
     let _flag = 0
     for (let i = 0; i < _data.length; i++) {
       if (_data[i].indexOf(_input_value) > -1) {
@@ -169,7 +168,6 @@ Page({  // 页面的初始数据  data: {
     this.setData({
       history: _history
     })
-
     //删除本地缓存
     wx.setStorageSync(app.globalData.ChooseStockHistory, _history)
   },

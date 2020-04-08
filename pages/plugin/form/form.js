@@ -67,20 +67,17 @@ Page({
     // time_type：a->一个月 b->三个月 c->一年 d->三年
     let _data_index = _index == 0 ? 'a' : _index == 1 ? 'b' : _index == 2 ? 'c' : _index == 3 ? 'd':'a'
     let _url_get_calculate_relation_result = 'getCalculateRelationResult/' + _firCode + '/' + _secCode + '/' + _data_index
-    wx.navigateTo({
-      url: '../result/result'
+    api._post(_url_get_calculate_relation_result).then(res => {
+        wx.setStorageSync(app.globalData.CaluateResult, res)
+        wx.navigateTo({
+          url: '../result/result'
+        })
+    }).catch(e => {
+      wx.showToast({
+        title: '服务器无响应，请联系客服。',
+        icon: 'none',
+        duration: 2000
+      })
     })
-    // api._post(_url_get_calculate_relation_result).then(res => {
-    //     wx.setStorageSync(app.globalData.CaluateResult, res)
-    //     wx.navigateTo({
-    //       url: '../result/result'
-    //     })
-    // }).catch(e => {
-    //   wx.showToast({
-    //     title: '服务器无响应，请联系客服。',
-    //     icon: 'none',
-    //     duration: 2000
-    //   })
-    // })
   },
 })

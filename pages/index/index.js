@@ -15,7 +15,10 @@ Page({
         wx.setStorageSync(app.globalData.StockInitTime, util.formatTime(new Date()))
       }
     }).catch(e => {
-      console.log(e)
+      wx.showToast({
+        title: '服务器连接失败，请重试',
+        icon: 'none'
+      });
     })
   },
   onLoad(){

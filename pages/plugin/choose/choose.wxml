@@ -10,9 +10,7 @@
     </view>
   </view>
 </view>
-<!--mask-->
 <view class="input_screen" bindtap="bindKeyInput" data-statu="open" wx:if="{{showInputStatus}}"></view>
-<!-- auto-completion  -->
 <view class="cu-list menu-avatar scrollview" wx:if="{{showInputStatus}}">
   <view class="cu-item" wx:for="{{bindSource}}" bindtap="itemtap" data-content="{{item}}" data-statu="close">
     <view class="content" wx:if="{{showInputStatus}}"> 
@@ -28,13 +26,13 @@
     <text class="cuIcon-delete lg text-gray" style="margin-right: 40rpx;font-size: 35rpx;"></text>
   </view>
 </view>
-  <view class="padding solid-bottom flex flex-wrap">
-    <view class="cu-capsule round padding-xs" wx:for="{{history}}">
-      <view class="cu-tag bg-grey " bindtap="historyClose" data-content="{{item}}">
-        <text class="cuIcon-close"></text>
-      </view>
-      <view class="cu-tag line-gret" bindtap="historyChoose" data-content="{{item}}">
-        {{item}}
-      </view>
+<view class="padding solid-bottom flex flex-wrap">
+  <view class="cu-capsule round padding-xs" wx:for="{{history}}">
+    <view class="cu-tag bg-grey " bindtap="historyClose" data-content="{{item}}">
+      <text class="cuIcon-close"></text>
+    </view>
+    <view class="cu-tag line-gret" bindtap="historyChoose" data-content="{{item}}">
+      {{item}}
     </view>
   </view>
+</view>

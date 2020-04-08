@@ -8,7 +8,6 @@ Page({  // 页面的初始数据  data: {
   onLoad: function (options) {
     let self = this
     let _caluate_result = wx.getStorageSync(app.globalData.CaluateResult)
-    
     self.setData({
       firCode: _caluate_result.first_code + ' ' + _caluate_result.first_name,
       secCode: _caluate_result.second_code + ' ' + _caluate_result.second_name,
