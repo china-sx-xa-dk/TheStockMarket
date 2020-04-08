@@ -1,4 +1,4 @@
-const baseUrl = 'http://127.0.0.1:8080/';
+const baseUrl = 'https://yjk.sxgokit.com/';
 
 const http = ({ url = '', param = {}, ...other } = {}) => {
   wx.showLoading({

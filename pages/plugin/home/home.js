@@ -15,11 +15,11 @@ Component({
           img: 'https://aitools.oss-cn-beijing.aliyuncs.com/toolLost-01.jpg',
           url: '/form/form'
       }
-      ,{
-        title: '自动补全测试',
-        img: 'https://aitools.oss-cn-beijing.aliyuncs.com/toolLost-01.jpg',
-        url: '/result/result'
-      }
+      // ,{
+      //   title: '自动补全测试',
+      //   img: 'https://aitools.oss-cn-beijing.aliyuncs.com/toolLost-01.jpg',
+      //   url: '/result/result'
+      // }
       // ,
       // {
       //   title: '全屏抽屉',

@@ -6,8 +6,8 @@ Page({
     CustomBar: app.globalData.CustomBar,
     index: 0,
     picker: ['一个月', '三个月', '一年', '三年'],
-    firCode: '000001',
-    secCode: '000002'
+    firCode: '',
+    secCode: ''
   },
   StockCodeClick(e){
     let index = e.currentTarget.dataset.index
