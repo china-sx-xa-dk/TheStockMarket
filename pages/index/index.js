@@ -12,6 +12,7 @@ Page({
     api._post('getBasicStock').then(res => {
       if (res.CodeStatus == 200) {
         wx.setStorageSync(app.globalData.StockList, res.BasicStockOneRowList)
+        wx.setStorageSync(app.globalData.StockInitTime, util.formatTime(new Date()))
       }
     }).catch(e => {
       console.log(e)
@@ -24,7 +25,6 @@ Page({
     if (stockInitTime == ''){
       //没有初始化过股票列表
       self.refreshStock()
-      wx.setStorageSync(app.globalData.StockInitTime, util.formatTime(new Date()))
     }else{
       //比较缓存时间是否与今日超过1天 超过时访问股票列表
       let _cut_hours = util.getDateDiff(stockInitTime, util.formatTime(new Date()), 'hour')

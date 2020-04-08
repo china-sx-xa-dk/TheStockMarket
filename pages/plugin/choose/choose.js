@@ -28,6 +28,8 @@ Page({  // 页面的初始数据  data: {
   },
   bindKeyInput: function (e) {
     const self = this
+    let _stock_list = self.adapterSource
+
     var currentInputStatu = e.currentTarget.dataset.statu
     var prefix = e.detail.value//用户实时输入值
     var newSource = []//匹配的结果
@@ -41,7 +43,7 @@ Page({  // 页面的初始数据  data: {
           showBtnStatus2: true
         }
       );
-      self.adapterSource.forEach(function (e) {
+      _stock_list.forEach(function (e) {
         if (e.indexOf(prefix) != -1) {//返回某个指定的字符串值在字符串中首次出现的位置,如果要检索的字符串值没有出现，则该方法返回 -1
           newSource.push(e)
         }
